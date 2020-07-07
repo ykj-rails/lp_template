@@ -1,0 +1,75 @@
+/* ==========================================================================
+ margin
+========================================================================== */
+.u-m-c
+  margin-right: auto !important
+  margin-left: auto !important
+/* Top margin */
+for $value in (1)..(30)
+  .u-mt-{$value * $base-size - $base-size}
+    margin-top: ($base-size * $value - $base-size)px !important
+.u-mt-23-5 {
+  margin-top: 23.5px !important
+}
+
+.u-mt-45
+  margin-top: 45px !important
+
+/* Right margin */
+for $value in (1)..(25)
+  .u-mr-{$value * $base-size - $base-size}
+    margin-right: ($base-size * $value - $base-size)px !important
+
+.u-mrPc-30
+  margin-right: 30px
+/* Bottom margin */
+for $value in (1)..(25)
+  .u-mb-{$value * $base-size - $base-size}
+    margin-bottom: ($base-size * $value - $base-size)px !important
+
+.u-mbPc-10
+  margin-bottom: 10px !important
+.u-mbPc-25
+  margin-bottom: 25px !important
+.u-mbPc-20
+  margin-bottom: 20px !important
+.u-mbPc-30
+  margin-bottom: 30px !important
+
+/* Left margin */
+for $value in (1)..(25)
+  .u-ml-{$value * $base-size - $base-size}
+    margin-left: ($base-size * $value - $base-size)px !important
+
+.u-mr-AddressRuby {
+  margin-left: 70px;
+}
+@media screen and (max-width: $break-point-sp)
+  /* Top margin */
+  for $value in (1)..(25)
+    .u-mt-sp-{$value * $base-size - $base-size}
+      margin-top: ($base-size * $value - $base-size)px !important
+  /* Right margin */
+  for $value in (1)..(25)
+    .u-mr-sp-{$value * $base-size - $base-size}
+      margin-right: ($base-size * $value - $base-size)px !important
+  .u-mrPc-30
+    margin-right: 0
+  /* Bottom margin */
+  for $value in (1)..(25)
+    .u-mb-sp-{$value * $base-size - $base-size}
+      margin-bottom: ($base-size * $value - $base-size)px !important
+
+  .u-mbPc-10
+    margin-bottom: 0 !important
+  .u-mbPc-25
+    margin-bottom: 0 !important
+  .u-mbPc-20
+    margin-bottom: 0 !important
+  .u-mbPc-30
+    margin-bottom: 0 !important
+  /* Left margin */
+  for $value in (1)..(25)
+    .u-ml-sp-{$value * $base-size - $base-size}
+      margin-left: ($base-size * $value - $base-size)px !important
+

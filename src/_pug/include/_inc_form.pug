@@ -1,0 +1,68 @@
+//- TODO: 入力フォーム【複数項目選択（チェックボックス）の場合】
+    複数選択項目に関しては、name属性値に[]をつけること。
+    また、項目をwrapしている要素に【data-validate-checkgroup】属性を付与する（属性値はname属性。ただし[]は不要）。
+    例：
+    <div data-validate-group="check">
+        <label><input type="checkbox" name="check[]" value="項目1">項目1</label>
+        <label><input type="checkbox" name="check[]" value="項目2">項目2</label>
+        <label><input type="checkbox" name="check[]" value="項目3">項目3</label>
+    </div>
+
+//- TODO: エラーメッセージ表示について
+    data-error属性とdata-mes属性を付与する。
+    data-error属性の値はname属性と一緒（複数選択項目については[]を外す）。
+    data-mes属性の値には、項目名が入る（data-mes="●●"が、エラーメッセージ「●●が未入力です」みたいな感じで表示される）。
+    （例1：<input type="text" name="name">の場合、<div data-error="name" data-mes="名前">）
+    （例2：<input type="checkbox" name="check[]">の場合、<div data-error="check" data-mes="チェックボックス">）
+
+#form__wrap
+    .l-mainSection
+        form(action="")
+            h2 入力項目
+            dl
+                dt
+                    | 会社名
+                    span 必須
+                dd
+                    input(type="text" name="company" id="company")
+                    p.formErrorTxt(data-error="company" data-mes="会社名") が未入力です
+            dl
+                dt
+                    | チェックボックス
+                    span 必須
+                dd
+                    div(data-validate-checkgroup='test')
+                        - for(let i =0;i<5;i++)
+                            label
+                                input(type='checkbox', name='test[]', value=`テスト${i}`)
+                                |テスト#{i}
+                    p.formErrorTxt(data-error="test" data-mes="チェックボックス") が未選択です
+                
+            button(type="submit" data-form="confirm" data-type="contact")
+                | 入力内容を確認する
+            p.formSection__message
+                |お問い合わせいただく内容およびお客様の個人情報は、
+                br
+                a(href="https://012grp.co.jp/policy" target="blank") プライバシーポリシー
+                | に則り管理いたします。
+                p.formErrorTxt 未入力の項目があります。
+
+
+//- TODO: 確認画面（モーダルや表示／非表示切り替えで表示を！）
+    値を表示させたい要素にdata-confirm属性を付与、属性値にnameを入れればOK
+    例）<input name="company">の場合、確認画面では<div data-confirm="company">とすることで入力値が表示される
+.confirmArea
+    h2 確認画面
+    dl
+        dt 会社名
+        dd
+            p(data-confirm='company')
+    dl
+        dt チェックボックス
+        dd
+            p(data-confirm='test')
+
+    button(type="submit" data-form="submit")
+        | 送信する
+    button(type="button" data-form="cancel")
+        | 内容を修正する

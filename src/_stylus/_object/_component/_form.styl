@@ -1,0 +1,269 @@
+.formRow
+  // border-bottom: 1px solid $clr-line--light
+  display: flex
+  align-items: center
+  flex-wrap: nowrap
+  padding: 10px 0
+  &:last-of-type
+    border-bottom: 0
+    padding-bottom: 0
+    margin-bottom: 40px
+.formRow--select
+  padding 15px 0
+  &:last-of-type
+    border-bottom: 0
+    padding-bottom: 0
+    margin-bottom: 30px
+.formRow__que
+  height: auto
+  width: 100%
+  max-width: 507px
+  display: flex
+  justify-content: space-between
+  align-items: center
+.formRow__que--secondary
+  width: 100%
+  height: auto
+  // margin-top: 10px
+  display: flex
+  align-items: center
+.formRow__que__main
+  font-size: 20px
+  text-align: left
+  font-weight: normal
+.formRow__que__main--secondary
+  margin-left:15px;
+  font-size: 20px
+
+
+._formRow__que__label
+  display: flex
+  width: 40px
+  height: 21px
+  justify-content: center
+  align-items: center
+  border-radius: 6px
+  color: $clr-white
+  border: none
+  font-size: 12px
+
+.formRow__que__label--required
+  @extends ._formRow__que__label
+  background: #f97d7d
+.formRow__que__label--any
+  @extends ._formRow__que__label
+  background: $clr-any
+
+.formRow__ans
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  padding-left: 10px
+  width: 100%
+  min-width: 504px
+.formRow__ans--select
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  width: 100%
+.formRow__que__annotation
+  color #808080
+._inputBase
+  height: 50px
+  padding: 0 19px
+  border-radius: 3px
+  border: 1px solid $clr-border
+  font-size: 16px
+  &::placeholder
+    color: $clr-place
+
+.inputMain
+  @extends ._inputBase
+  width: 100%
+.inputSecondary
+  @extends ._inputBase
+  width: 162px
+
+._selectBase
+  @extends ._inputBase
+.selectMain
+  @extends ._selectBase
+  width: 100%
+
+._selectBoxBase
+  position: relative
+  &:after
+    content: ''
+    display: block
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    width: 0
+    height: 0
+    border-top: 11px solid $clr-triangle
+    border-right: 7px solid transparent
+    border-left: 7px solid  transparent
+.selectBox
+  @extends ._selectBoxBase
+  width: 100%
+  &:after
+    right: 25px
+.selectBox--short
+  @extends ._selectBoxBase
+  &:after
+    right: 14px
+.selectSecondary
+  @extends ._selectBase
+  width: 140px
+.selectTertiary
+  @extends ._selectBase
+  width: 70px
+
+.formRow__ans__chara
+  display: inline-block
+  font-weight: bold
+  height: 23px
+  margin: 0 28.6px 0 12px
+.radioSet
+  margin-right: 50px
+  display: flex
+  align-items: center
+.radioSet__button
+  margin-right: 15px
+
+.textareaMain
+  width: 100%
+  height: 100px
+  padding: 10px
+  border: 1px solid $clr-border
+  border-radius: 3px
+  font-size: 16px
+  &::placeholder
+    font-size: 16px
+    color: $clr-any
+
+.formErrorTxt
+  color: $clr-err
+  margin-left: 10px
+  display: none
+.form__caution
+  margin-top: 45px
+  font-size: 16px
+// .c-checkBox
+//   visibility: hidden
+//   width: 0
+//   height: 0
+// .c-checkBox__main
+//   display flex
+//   font-size: 12px
+//   justify-content: center
+//   align-items: center
+//   margin-top: 25px
+//   user-select: none
+//   cursor pointer
+//   &:before
+//     display: inline-block
+//     content: ''
+//     width: 20px
+//     height: 20px
+//     background: #F5F5F5
+//     border: 1px solid #E0E0E0
+//     margin-right: 5px
+//     input[type=checkbox]:checked + &
+//       background center/contain no-repeat url("../img/svg/check.svg")
+
+.formSection__info
+  margin-top: 10px
+.formSection__info__head
+  font-size: 12px
+  font-weight bold
+.formSection__info__txt
+  font-size: 12px
+  margin-top 8px
+@media screen and (max-width: 960px)
+  .formRow
+    flex-direction: column
+    padding: 0 0 21.5px
+    margin-bottom: 0
+    align-items: flex-start
+    &:last-of-type
+      padding-bottom: 50px
+      margin-bottom: 0
+    &first-of-type
+      padding-top: 0
+    width: 100%
+  .formRow__que
+    margin-top: 0;
+    justify-content: space-between
+    padding: 0 17px
+  .formRow__ans
+    max-width: none
+    padding: 0 17px
+    margin-top: 12.5px
+    min-width: 0
+  .formRow__que__main
+    margin-left: 15px
+    font-weight bold
+  .formRow__que__main--secondary
+    margin-left: 0px
+    margin-right: 15px
+    width 80%
+    text-align: left
+    font-size 14px
+@media screen and (max-width: $break-point-sp)
+  .formRow__que__label--required
+    width: 40px
+    height: 20px
+    font-size: 12px
+    line-height: 20px
+  .formRow__que__label--any
+    width: 45px
+    height: 20px
+    font-size: 10px
+    line-height: 20px
+  .formRow__que__main
+    font-size: 14px
+    margin-left 0
+    margin-right 15px
+    font-weight bold
+  .formRow__ans
+    max-width: none
+    padding: 0 17px
+    margin-top: 12.5px
+    min-width: 0
+  .formRow__ans__chara
+    margin: 0 17px 0 5px
+    &:last-of-type
+      margin-right: 0
+  .inputMain
+  .inputSecondary
+  ._selectBase
+  .selectMain
+    font-size: 14px
+  .inputSecondary
+    width: 100%
+  .selectSecondary
+    width: 97px
+  .selectTertiary
+    width: 55.5px
+
+  .radioSet
+    margin-right: 0
+    font-size: 16px
+    &:first-of-type
+      margin: 0 130px 5px 0
+  .radioSet__button
+    margin-right: 15px
+  .textareaMain
+    height: 188.8px
+  .formRow__que--secondary
+    width: 100%
+    width 100%
+    height: auto
+    margin: 10px auto
+    padding 0 27px
+    display: flex
+    justify-content: space-between
+
+  .formRow__que__annotation
+    font-size 12px

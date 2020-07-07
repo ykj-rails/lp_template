@@ -1,0 +1,13 @@
+// ====================================
+// mixin
+// ====================================
+mq() {
+    @media screen and (max-width :$break-point-sp) {
+        { block }
+    }
+}
+mq_between() {
+    @media screen and (max-width :1919px) and (min-width :$break-point-sp - 1) {
+        { block }
+    }
+}

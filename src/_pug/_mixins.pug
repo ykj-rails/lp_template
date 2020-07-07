@@ -1,0 +1,14 @@
+//- TODO: 必要あれば、mixinをincludeして利用してください。
+    Mixinの使い方(https://pugjs.org/language/mixins.html)
+
+//- selectのoption（月）
+mixin monthSelect()
+    option(value="")
+    - for (let month = 1; month<=12; month++)
+        option(value=month) #{month}
+
+//- selectのoption（日）
+mixin daySelect()
+    option(value="")
+    - for (let day = 1; day<=31; day++)
+        option(value=day) #{day}

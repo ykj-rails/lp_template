@@ -1,0 +1,9 @@
+extends ./_pug/tmp/_thanks
+
+block varsThanks
+    include ./_pug/_config
+        - var key = "complete"
+        - var page = pages[key]
+
+block mainContents
+    p thanksページ。

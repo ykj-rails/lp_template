@@ -1,0 +1,79 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "template",
+  "main": "index.js",
+  "repository": "jcom-lp",
+  "config": {
+    "path": "./public"
+  },
+  "scripts": {
+    "lint": "eslint --fix ./src/js/*.js && eslint --fix ./src/js/app.js",
+    "make:clean": "rimraf $npm_package_config_path",
+    "build:webpack": "NODE_ENV=pro webpack --mode production",
+    "dev:webpack": "NODE_ENV=dev webpack --mode production",
+    "make:moduledelete": "rimraf $npm_package_config_path/js/modules",
+    "makefontdir": "mkdir -p $npm_package_config_path/font",
+    "iconfont": "icon-font-generator ./src/img/iconfont/*.svg -o ./public/font/ --name icon --cssfontsurl ../font/ --csspath ./src/_stylus/_foundation/_iconFont.styl --html false --types 'ttf, woff, woff2, eot, svg' --json false --prefix c-icon-",
+    "imagemin:build": "node imagemin.js",
+    "imagemin:watch": "onchange './src/img' -- npm run imagemin:build",
+    "start": "webpack-dev-server --mode development --inline --content-base public/ --watch-content-base --open",
+    "dev": " run-s make:* dev:* makefontdir imagemin:build",
+    "build": "run-s make:* build:* makefontdir imagemin:build"
+  },
+  "keywords": [
+    "template"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@babel/runtime-corejs3": "^7.5.5",
+    "es6-promise": "^4.2.8",
+    "regenerator-babel": "^0.8.13-2",
+    "resize-observer-polyfill": "^1.5.1",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/runtime-corejs2": "^7.5.5",
+    "autoprefixer": "^9.5.0",
+    "babel-loader": "^8.0.5",
+    "copy-webpack-plugin": "^5.0.2",
+    "css-loader": "^2.1.1",
+    "globule": "^1.2.1",
+    "html-beautify-webpack-plugin": "^1.0.5",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "icon-font-generator": "^2.1.10",
+    "imagemin": "^7.0.0",
+    "imagemin-gifsicle": "^6.0.1",
+    "imagemin-keep-folder": "^5.3.2",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^8.0.0",
+    "imagemin-svgo": "^7.0.0",
+    "jquery": "^3.4.1",
+    "micromodal": "^0.4.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5",
+    "object-fit-images": "^3.2.4",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-loader": "^3.0.0",
+    "prettier": "^1.18.2",
+    "pug": "^2.0.3",
+    "pug-loader": "^2.4.0",
+    "rimraf": "^2.6.3",
+    "style-loader": "^0.23.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "browserslist": [
+    "last 2 version",
+    "ie >= 11"
+  ]
+}

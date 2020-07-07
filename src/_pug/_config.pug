@@ -1,0 +1,28 @@
+//- - var mode = 'dev'
+- var mode = 'pro'
+
+if mode == 'dev'
+    - var domain = '/hajime-telework/'
+else if mode == 'pro'
+    - var domain = '/'
+else
+    console.log('pugの開発モードが不正な値です。')
+-
+  var pages = {
+    top : {
+      name : 'はじめてのテレワーク',
+      title : 'はじめてのテレワーク',
+      description : 'はじめてのテレワーク',
+      keywords : 'テレワーク,在宅勤務',
+      passRoute: './',
+      header: 'main'
+    },
+    complete : {
+      name : 'はじめてのテレワーク',
+      title : 'はじめてのテレワーク',
+      description : 'はじめてのテレワーク',
+      keywords : '',
+      passRoute: './',
+      header: 'simple'
+    },
+  }

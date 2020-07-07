@@ -1,0 +1,43 @@
+/* ==========================================================================
+ Base
+========================================================================== */
+
+@font-face {
+    font-family: 'alte Din';
+    src: url('../font/Alte DIN 1451 Mittelschrift gepraegt Regular/Alte DIN 1451 Mittelschrift gepraegt Regular.ttf');
+}
+* {
+    box-sizing: border-box;
+    color: $clr-black;
+}
+body
+    font-family: "ヒラギノ角ゴ ProN", -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    &.is-fixed
+        position: fixed
+a {
+    cursor: pointer;
+}
+table {
+    border-collapse: collapse;
+}
+dl {
+    display: flex;
+    flex-wrap: wrap;
+}
+ul {
+    list-style: none;
+}
+select,
+textarea {
+    appearance: none;
+    background-color: $clr-white;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.selectMain__placeholder {
+    display: none  //プルダウンメニューの一項目目選択不可
+}

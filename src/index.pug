@@ -1,0 +1,11 @@
+extends ./_pug/tmp/_default
+
+block vars
+    include ./_pug/_config
+        - var key = "top"
+        - var page = pages[key]
+
+block mainContents
+    main
+        p メインコンテンツ
+        include ./_pug/include/_inc_form

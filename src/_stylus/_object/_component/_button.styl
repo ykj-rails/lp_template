@@ -1,0 +1,198 @@
+button-mixin(wid,hei)
+  width: wid
+  height: hei
+  border-radius: 3px
+  color: white
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+  margin: 0 auto
+
+.c-buttonPrimary
+  button-mixin(386px,58px)
+  border: none
+  background: $clr-btn-submit
+  box-shadow: 0 0 30px rgba(0,0,0,.25)
+  border: 3px solid #d43a1b;
+  font-size: 18px
+  -webkit-appearance: none;
+  width: 100%
+  border-radius: 50px
+  .formSection &
+    margin-top: 10px
+.c-buttonPrimaryAfter
+  position: relative
+  width: 386px
+  margin: 0 auto
+  // &:after
+  //   position: absolute
+  //   display: block
+  //   content: ''
+  //   top: 50%
+  //   transform: translateY(-50%) rotate(45deg)
+  //   right: 33px
+  //   width: 10px
+  //   height: 10px
+  //   border-top: 2px solid white
+  //   border-right: 2px solid white
+.c-buttonPrimary--mini
+  &:before
+    content: ''
+    background-image: url("../img/icon.png")
+.c-buttonPrimary--mini
+.c-buttonPrimary--mini--banner //spでの表示が異なるため２つ用意
+  button-mixin(260px,50px)
+  background: $clr-btn-submit
+  box-shadow: 0 3px 0 $clr-btn-shadow
+  font-size: 18px
+  text-decoration: none
+  border-radius:50px;
+
+.c-buttonPrimary--large
+  button-mixin(33%,60px)
+  background: $clr-btn-submit
+  // box-shadow: 0 3px 0 $clr-btn-shadow
+  font-size: 22px
+  margin-top: 25px
+  text-decoration: none
+  border-radius:50px
+  border: 3px solid #d43a1b;
+
+.c-buttonPrimary--large__ico
+  width: 47px
+  margin-right: 20px
+
+.c-buttonIcon
+    width: 20px
+    margin-left: 10px;
+    transform: rotate(90deg)
+.c-buttonIcon--submit
+    width: 20px
+    margin-left: 10px;
+    // transform: rotate(90deg)
+.c-buttonTxt
+  color: white
+
+.c-buttonSecondary
+  button-mixin(260px,60px)
+  text-decoration: none
+  background: $clr-btn-secondary
+  box-shadow: 0 3px 0 $clr-btn-secondShadow
+  font-size: 18px
+.c-buttonSecondary--mini
+  button-mixin(100%,102px)
+  text-decoration: none
+  background: $clr-btn-secondary
+  box-shadow: 0 3px 0 $clr-btn-secondShadow
+.c-buttonSecondary--mini__ico
+  width: 36px
+
+.c-buttonTertiary
+  button-mixin(260px,60px)
+  background: $clr-btn-tertiary
+  box-shadow: 0 3px 0 $clr-btn-tertiaryShadow
+  font-size: 18px
+  text-decoration: none
+.c-buttonTertiary--mini
+  button-mixin(100%,102px)
+  text-decoration: none
+  background: $clr-btn-tertiary
+  box-shadow: 0 3px 0 $clr-btn-tertiaryShadow
+  font-size: 22px
+.c-buttonTertiary--mini__ico
+  width: 33px
+  margin-right: 5px
+
+.c-buttonPrimaryRec
+.c-buttonTxtSp
+  display: none
+
+.c-buttonCancel
+  display flex
+  justify-content center
+  align-items center
+  width 460px
+  height 50px
+  margin-top 25px
+  margin-right auto
+  margin-left auto
+  background #F7F7F7
+  border-radius 6px
+  color #808080
+  text-align center
+  font-size 15px
+  @media screen and (max-width: $break-point-sp)
+    width 100%
+    max-width: 200px
+    height 25px
+    font-size 10px
+
+@media screen and (max-width: 1060px)
+  .c-buttonPrimary--large__subtxt
+    display: none
+  .c-buttonSecondary--mini
+    flex-direction: column
+  .c-buttonTertiary--mini
+    flex-direction: column
+  .c-buttonPrimary--large__txt
+    font-size: 18px
+@media screen and (max-width: $break-point-sp)
+  .c-buttonPrimary--large
+    width:100%
+  .c-buttonPrimaryAfter
+    width: 100%
+    // &:after
+    //   right: 24px
+  .c-buttonPrimary
+    position: relative
+    max-width 340px
+    width: 100%
+    height: 60px
+    font-size: 17px
+  .c-buttonPrimary--mini
+    width: 60px
+    height: 50px
+
+  bannerBtn()
+    height: 80px
+    width: 50%
+    border-radius: 0
+    flex-direction: column
+    font-size: 10px
+    justify-content: flex-start
+  .c-buttonPrimary--mini--banner
+    bannerBtn()
+    box-shadow: none
+  .c-buttonSecondary
+    bannerBtn()
+    box-shadow: none
+  .c-buttonTertiary
+    bannerBtn()
+    box-shadow: none
+  .c-buttonPrimaryRec
+    bannerBtn()
+    display: block
+    background: $clr-theme-font
+    color: white
+    text-align: center
+    text-decoration: none
+  .c-buttonPrimaryRec__icon
+    width: 25px
+    color: white
+    margin-top: 22px
+    vertical-align: baseline
+  .c-buttonPrimaryRec__txt
+    color: white
+    font-size: 10px
+    line-height: 1
+    margin-top: 8px
+
+  .c-buttonIcon
+    width: 25px
+  .c-buttonTxt
+    margin-top: 8px
+  .c-buttonTxtSp
+    display: inline
+    margin-top: 8px
+    color: white
